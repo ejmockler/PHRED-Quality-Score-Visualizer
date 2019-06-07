@@ -55,7 +55,7 @@ ROOT_URLCONF = 'QualityScoreVisualizer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['QualityScoreVisualizer/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

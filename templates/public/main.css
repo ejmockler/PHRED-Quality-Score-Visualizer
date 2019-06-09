@@ -26,3 +26,16 @@ a {
   text-decoration: none;
   color: inherit; }
 
+._1clBS3JPSJSE2fKCC_gxuX {
+  background: #2D2A32;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 32px;
+  width: 640px;
+  margin: 4.25em auto 10em auto;
+  padding: 50px; }
+  @media (max-width: 56.25em) {
+    ._1clBS3JPSJSE2fKCC_gxuX {
+      width: 90%;
+      padding: 10% 3%;
+      margin: 1% auto 5% auto; } }
+

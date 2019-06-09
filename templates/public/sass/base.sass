@@ -1,0 +1,61 @@
+@mixin respond($breakpoint) 
+  @if $breakpoint == phone-narrow
+   @media (max-width: 25em)
+    @content
+
+  @if $breakpoint == phone
+   @media (max-width: 37.5em)
+    @content
+
+  @if $breakpoint == tab-port
+   @media (max-width: 56.25em)
+    @content
+
+  @if $breakpoint == tab-land
+   @media (max-width: 75em)
+    @content
+
+  @if $breakpoint == mission
+   @media (max-width: 99em)
+    @content
+
+  @if $breakpoint == big-desktop
+   @media (min-width: 112.5em)
+    @content
+*,
+*::after,
+*::before
+ margin: 0
+ padding: 0
+ box-sizing: inherit
+
+html
+ font-family: 'AC', sans-serif
+ -webkit-font-smoothing: antialiased
+ background-color: #1C1921
+ font-size: 45% // 1rem = 10px
+ overflow-x: hidden
+ @include respond(tab-land)
+   font-size: 40%
+ @include respond(tab-port)
+   font-size: 37.5%
+
+$color-bg: #1C1921
+$color-bg-alt: #312D38
+$color-text-orange: #EBA471
+$color-text-alt: rgba(252, 249, 255, 0.7)
+$color-bg-footer: #2E2A38
+$color-text-footer: #8D84A1
+
+$font-stack-alt: 'Space Mono', monospace
+$font-stack: 'Varela Round', sans-serif
+
+body, html
+ overflow-x: hidden
+ scroll-behavior: smooth
+
+a
+ text-decoration: none
+ color: inherit  
+ 
+ @import 'components/home'

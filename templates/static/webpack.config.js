@@ -21,7 +21,7 @@ const config = {
     {
      loader: 'css-loader',
      options: {
-       modules: true,
+       modules: false,
        sourceMap: true,
        importLoaders: 1,
       }

@@ -46,7 +46,9 @@
     "webpack-cli": "^3.3.3"
   },
   "dependencies": {
+    "fusioncharts": "^3.13.5-sr.1",
     "history": "^4.9.0",
+    "react-fusioncharts": "^3.0.1",
     "react-router-dom": "^5.0.1"
   }
 }

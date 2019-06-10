@@ -6,11 +6,11 @@ export default class SequenceContainer extends Component {
  render() { 
   return ( 
   <div className='sequenceContainer'>
-   <div className='sequenceContainer_FASTQfileBox'>
-    <FASTQfileBox/>
+   <div className='sequenceContainer_FASTQfileContainer'>
+   <FASTQfileBox/>
    </div>
-   <div className='sequenceContainer_historyTable'>
-    <HistoryTable/>
+   <div className='sequenceContainer_historyContainer'>
+   
    </div>
   </div>
    )}

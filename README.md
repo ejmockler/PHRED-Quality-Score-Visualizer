@@ -4,6 +4,6 @@ A webapp for easy visualization of PHRED-format quality scores from FASTQ sequen
 
 ## Startup
 
- ```python run.py```
+ ```python run.py```<br>
 open a second command line:
  ```npm run --prefix templates/static```

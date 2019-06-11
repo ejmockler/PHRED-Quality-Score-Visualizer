@@ -83,6 +83,7 @@ a {
       text-align: center;
       padding: 10px 2px;
       width: 80%;
+      height: 15%;
       border-style: dashed;
       color: #c4bfb6; }
       .sequenceContainer .FASTQfileBox_border:focus {

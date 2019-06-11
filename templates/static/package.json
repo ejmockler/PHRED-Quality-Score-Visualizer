@@ -48,7 +48,9 @@
   "dependencies": {
     "fusioncharts": "^3.13.5-sr.1",
     "history": "^4.9.0",
+    "react-dropzone": "^10.1.5",
     "react-fusioncharts": "^3.0.1",
-    "react-router-dom": "^5.0.1"
+    "react-router-dom": "^5.0.1",
+    "superagent": "^5.0.6"
   }
 }

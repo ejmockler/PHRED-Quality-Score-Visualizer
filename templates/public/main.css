@@ -22,7 +22,7 @@ body, html {
   overflow-x: hidden;
   scroll-behavior: smooth; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, ul {
   color: #c4bfb6; }
 
 a {
@@ -83,7 +83,6 @@ a {
       text-align: center;
       padding: 10px 2px;
       width: 80%;
-      height: 15%;
       border-style: dashed;
       color: #c4bfb6; }
       .sequenceContainer .FASTQfileBox_border:focus {

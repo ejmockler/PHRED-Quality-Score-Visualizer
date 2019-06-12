@@ -38,8 +38,6 @@ a {
   margin: 4.25em auto 10em auto;
   margin-bottom: -5px;
   padding: 25px; }
-  .chartContainer div {
-    margin: 0 auto; }
   @media (max-width: 56.25em) {
     .chartContainer {
       width: 90%;
@@ -89,4 +87,6 @@ a {
         border-color: #ffffff; }
     .sequenceContainer .FASTQfileBox_list {
       margin: 2% 10%; }
+  .sequenceContainer .historyTable {
+    font-size: 2em; }
 

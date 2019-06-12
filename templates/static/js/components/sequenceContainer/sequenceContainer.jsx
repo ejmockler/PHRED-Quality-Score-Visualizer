@@ -7,10 +7,10 @@ export default class SequenceContainer extends Component {
   return ( 
   <div className='sequenceContainer'>
    <div className='sequenceContainer_FASTQfileContainer'>
-   <FASTQfileBox/>
+    <FASTQfileBox/>
    </div>
    <div className='sequenceContainer_historyContainer'>
-   
+    <HistoryTable/>
    </div>
   </div>
    )}

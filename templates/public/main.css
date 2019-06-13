@@ -88,5 +88,8 @@ a {
     .sequenceContainer .FASTQfileBox_list {
       margin: 2% 10%; }
   .sequenceContainer .historyTable {
-    font-size: 2em; }
+    font-size: 2em;
+    color: #C4BFB6; }
+    .sequenceContainer .historyTable ~ button {
+      color: #C4BFB6; }
 

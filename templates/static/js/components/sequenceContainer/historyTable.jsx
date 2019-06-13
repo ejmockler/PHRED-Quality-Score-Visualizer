@@ -16,14 +16,8 @@ export default class HistoryTable extends Component {
 
   onRowClick = (action, row) => {
     switch (action) {
-      case "altClick":
-        if (this.tmp.has(row.myID)) this.tmp.delete(row.myID)
-        else this.tmp.add(row.myID)
-        this.setState({
-          selectionChanged: this.state.selectionChanged ? false : true
-        })
-        break
       default:
+        this.tmp.clear()
         this.tmp.add(row.myID)
         this.setState({
           selectionChanged: this.state.selectionChanged ? false : true
@@ -40,54 +34,34 @@ export default class HistoryTable extends Component {
     const { data } = this.state
     return (
       <div className='historyTable'>
-        <h3>Select multiple rows by alt+click</h3>
+        <h3>FASTQ Sequences</h3>
         <hr />
         <ReactTable
           data={data}
+          showPagination={false}
           columns={[
             {
-              Header: "Name",
-              columns: [
-                {
-                  Header: "ID",
-                  accessor: "myID",
-                  style: { textAlign: "right" }
-                },
-                {
-                  Header: "First Name",
-                  accessor: "firstName"
-                },
-                {
-                  Header: "Last Name",
-                  id: "lastName",
-                  accessor: d => d.lastName
-                }
-              ]
+              Header: "File Name",
+              accessor: "fileName",
+              style: { textAlign: "right" }
             },
             {
-              Header: "Info",
-              columns: [
-                {
-                  Header: "Age",
-                  accessor: "age"
-                },
-                {
-                  Header: "Status",
-                  accessor: "status"
-                }
-              ]
+              Header: "Header",
+              accessor: "Header"
             },
             {
-              Header: "Stats",
-              columns: [
-                {
-                  Header: "Visits",
-                  accessor: "visits"
-                }
-              ]
+              Header: "Quality Score",
+              accessor: "qualityScore"
+            },
+            {
+              Header: "Sequence",
+              accessor: "sequence"
             }
           ]}
           defaultPageSize={5}
+          style={{
+            height: "200px" // This will force the table body to overflow and scroll, since there is not enough room
+          }}
           pageSizeOptions={[10, 25, 50, 100, 150, 250, 500]}
           className="-striped -highlight"
           getTdProps={(state, rowInfo, column) => {
@@ -95,9 +69,7 @@ export default class HistoryTable extends Component {
               return {
                 onClick: (event, handleOriginal) => {
                   event.stopPropagation()
-                  if (event.altKey)
-                    this.onRowClick("altClick", rowInfo.row._original)
-                  else if (event.shiftKey)
+                  if (event.shiftKey)
                     this.onRowClick(
                       "shiftClick",
                       rowInfo.row._original,

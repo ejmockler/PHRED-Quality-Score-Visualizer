@@ -29,10 +29,10 @@ const chartConfigs = {
     dataSource: {
         // Chart Configuration
         "chart": {
-            "caption": "Unique Website Visitors",
-            "subcaption": "Last year",
-            "yaxisname": "Unique Visitors",
-            "xaxisname": "Date",
+            "caption": "FASTQ Quality Scores",
+            "subcaption": "PHRED-64",
+            "yaxisname": "PHRED Score",
+            "xaxisname": "Base Position",
             "yaxisminValue": "800",
             "yaxismaxValue": "1400",
             "pixelsPerPoint": "0",

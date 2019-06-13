@@ -1,97 +1,56 @@
-import React, { Component } from "react"
-import classnames from 'classnames'
-
-// Import React Table
-import ReactTable from "react-table"
+import React, { Component } from "react";
+import { AgGridReact } from "ag-grid-react";
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 
 export default class HistoryTable extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
-      data: ['1', '2', '3', '4', '5', '6'],
-      selectionChanged: false
+      columnDefs: [{
+        headerName: "Header", field: "header", sortable: true, filter: true, resizable: true, width: 255
+      }, {
+        headerName: "Sequence", field: "sequence", sortable: true, filter: true, resizable: true, width: 255
+      }, {
+        headerName: "Quality Score", field: "qualityScore", sortable: true, filter: true, resizable: true, width: 255
+      }],
+      rowData: [{
+        header: "@HWI-EAS91_1_30788AAXX:1:1:1761:343",
+        sequence: "AAAAAAANNAAAAAAAAAAAAAAAAAAAAAAAAAAACNNANNGAGTNGNNNNNNNGCTTCCCACAGNNCTGG", 
+        qualityScore: "hhhhhhh;;hhhhhhhhhhh^hOhhhhghhhfhhhgh;;h;;hhhh;h;;;;;;;hhhhhhghhhh;;Phhh"
+      }, {
+        header: "@HWI-EAS91_1_30788AAXX:1:1:1578:331", 
+        sequence: "GTATAGANNAATAAGAAAAAAAAAAATGAAGACTTTCNNANNTCTGNANNNNNNNTCTTTTTTCAGNNGTAG",
+        qualityScore: "hhhhhhh;;hhhhhhhhhhhhhhhhhhhhhhhhhhhh;;h;;hhhh;h;;;;;;;hhhhhhhhhhh;;hhVh"
+      }, {
+        header: "@HWI-EAS91_1_30788AAXX:1:1:1647:512", 
+        sequence: "GTTCCATNNATCTGTGTGTCTATTTTTGTGCAAGTAANNCNNTGTTNANNNNNNNTGAAGAAGACANNAAGA", 
+        qualityScore: "hhhhhhh;;hhhhhhhhhhhhhhhhhhhhhhhhhhhh;;h;;hhhh;h;;;;;;;hhhhhhhhfhh;;hhhh"
+      }]
     }
-    this.tmp = new Set()
-  }
-
-  onRowClick = (action, row) => {
-    switch (action) {
-      default:
-        this.tmp.clear()
-        this.tmp.add(row.myID)
-        this.setState({
-          selectionChanged: this.state.selectionChanged ? false : true
-        })
-        break
-    }
-  }
-
-  isRowSelected = rowID => {
-    return this.tmp.has(rowID)
   }
 
   render() {
-    const { data } = this.state
     return (
-      <div className='historyTable'>
+      <div className="historyTable">
         <h3>FASTQ Sequences</h3>
         <hr />
-        <ReactTable
-          data={data}
-          showPagination={false}
-          columns={[
-            {
-              Header: "File Name",
-              accessor: "fileName",
-              style: { textAlign: "right" }
-            },
-            {
-              Header: "Header",
-              accessor: "Header"
-            },
-            {
-              Header: "Quality Score",
-              accessor: "qualityScore"
-            },
-            {
-              Header: "Sequence",
-              accessor: "sequence"
-            }
-          ]}
-          defaultPageSize={5}
-          style={{
-            height: "200px" // This will force the table body to overflow and scroll, since there is not enough room
-          }}
-          pageSizeOptions={[10, 25, 50, 100, 150, 250, 500]}
-          className="-striped -highlight"
-          getTdProps={(state, rowInfo, column) => {
-            if (rowInfo !== undefined) {
-              return {
-                onClick: (event, handleOriginal) => {
-                  event.stopPropagation()
-                  if (event.shiftKey)
-                    this.onRowClick(
-                      "shiftClick",
-                      rowInfo.row._original,
-                      rowInfo.index
-                    )
-                  else this.onRowClick("click", rowInfo.row._original)
-                  if (handleOriginal) handleOriginal()
-                }
-              }
-            }
-          }}
-          getTrProps={(state, rowInfo, column) => {
-            if (rowInfo !== undefined) {
-              return {
-                className: classnames({
-                  "selected-row": this.isRowSelected(rowInfo.original.myID)
-                })
-              }
-            }
-          }}
-        />
+        <div 
+          className="ag-theme-balham-dark"
+          style={{ 
+          height: '100%', 
+          width: '100%' }} 
+        >
+          <AgGridReact
+            rowSelection='single'
+            columnDefs={this.state.columnDefs}
+            rowData={this.state.rowData}
+            onGridReady={ params => this.gridApi = params.api }
+          >
+          </AgGridReact>
+        </div>
       </div>
-    )
+    );
   }
 }
+

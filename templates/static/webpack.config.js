@@ -15,7 +15,6 @@ const config = {
  module: {
   rules: [{
    test: /\.(scss|sass|css)$/,
-   exclude: /node_modules/,
    loaders: [
     MiniCssExtractPlugin.loader,
     {

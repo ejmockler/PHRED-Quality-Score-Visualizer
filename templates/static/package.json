@@ -30,9 +30,12 @@
   },
   "homepage": "https://github.com/mocklee/PHRED-Quality-Score-Visualizer#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^2.1.1",
@@ -48,6 +51,8 @@
   },
   "dependencies": {
     "@types/classnames": "^2.2.8",
+    "ag-grid-community": "^21.0.1",
+    "ag-grid-react": "^21.0.1",
     "fusioncharts": "^3.13.5-sr.1",
     "history": "^4.9.0",
     "react-dropzone": "^10.1.5",

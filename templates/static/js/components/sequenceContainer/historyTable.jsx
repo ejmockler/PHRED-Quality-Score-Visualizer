@@ -8,11 +8,11 @@ export default class HistoryTable extends Component {
     super(props);
     this.state = {
       columnDefs: [{
-        headerName: "Header", field: "header", sortable: true, filter: true, resizable: true, width: 255
+        headerName: "Header", field: "header", sortable: true, filter: true, resizable: true, width: 255, editable: true
       }, {
-        headerName: "Sequence", field: "sequence", sortable: true, filter: true, resizable: true, width: 255
+        headerName: "Sequence", field: "sequence", sortable: true, filter: true, resizable: true, width: 255, editable: true
       }, {
-        headerName: "Quality Score", field: "qualityScore", sortable: true, filter: true, resizable: true, width: 255
+        headerName: "Raw Quality Score", field: "qualityScore", sortable: true, filter: true, resizable: true, width: 255, editable: true
       }],
       rowData: [{
         header: "@HWI-EAS91_1_30788AAXX:1:1:1761:343",
@@ -30,6 +30,11 @@ export default class HistoryTable extends Component {
     }
   }
 
+  onSelectionChanged() {
+    var selectedRows = this.gridApi.getSelectedRows()
+    
+  }
+
   render() {
     return (
       <div className="historyTable">
@@ -42,10 +47,11 @@ export default class HistoryTable extends Component {
           width: '100%' }} 
         >
           <AgGridReact
-            rowSelection='single'
+            rowSelection='multiple'
             columnDefs={this.state.columnDefs}
             rowData={this.state.rowData}
             onGridReady={ params => this.gridApi = params.api }
+            onSelectionChanged={this.onSelectionChanged.bind(this)}
           >
           </AgGridReact>
         </div>

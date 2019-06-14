@@ -34,8 +34,8 @@ const chartConfigs = {
             "yaxisname": "PHRED Score",
             "xaxisname": "Base Position",
             "labeldisplay": "auto",
-            "yaxisminValue": "0",
-            "yaxismaxValue": "93",
+            "yaxisminValue": "0", // Changed to -5 if Solexa-encoded, on Python Flask backend
+            "yaxismaxValue": "60",
             "pixelsPerPoint": "0",
             "pixelsPerLabel": "30",
             "lineThickness": "1",
@@ -75,7 +75,6 @@ var centerStyle = {
  margin: '0 auto'
 }
 
-// Step 9 - Creating the DOM element to pass the react-fusioncharts component
 export default class QualityScoreZoomline extends Component {
  render() {
   return (

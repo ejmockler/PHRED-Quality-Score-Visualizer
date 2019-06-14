@@ -32,7 +32,7 @@ export default class HistoryTable extends Component {
 
   onSelectionChanged() {
     var selectedRows = this.gridApi.getSelectedRows()
-    
+    // update chart state with selected row data
   }
 
   render() {

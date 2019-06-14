@@ -5,7 +5,15 @@ PHRED scores describe the error probability of an inaccurate DNA base read durin
 
 ## Startup
 
- ```python run.py```<br>
-in a second command line: <br>
-```npm i --prefix templates/static``` <br>
-```npm run watch --prefix templates/static```
+### *Prerequisites: Python 3.7< & NodeJS 6.4.1<*  
+
+***
+
+Enter a command line in root directory to start Flask:
+```python run.py```  
+
+Enter another command line in root directory to install Node dependencies & start React:  
+```npm install ./templates/static```
+```npm run watch --prefix ./templates/static```  
+
+Load the web application at the IP address & port given in the Flask command line window with a web browser

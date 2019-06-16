@@ -16,4 +16,4 @@ Enter another command line in root directory to install Node dependencies & star
 ```npm install ./templates/static```
 ```npm run watch --prefix ./templates/static```  
 
-Load the web application at the IP address & port given in the Flask command line window with a web browser
+Load the webapp at the IP address & port given by Flask

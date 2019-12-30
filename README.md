@@ -10,11 +10,12 @@ PHRED scores describe the error probability of an inaccurate DNA base read durin
 ***
 
 **FLASK API TODO-- INCOMPLETE**
-Enter a command line in root directory to start Flask:
+
+1. Enter a command line in root directory to start Flask:
 ```python run.py```  
 
-Enter another command line in root directory to install Node dependencies & start React:  
+2. Enter another command line in root directory to install Node dependencies & start React:  
 ```npm install ./templates/static```
 ```npm run watch --prefix ./templates/static```  
 
-Load the webapp at the IP address & port given by Flask
+3. Load the webapp at the IP address & port given by Flask

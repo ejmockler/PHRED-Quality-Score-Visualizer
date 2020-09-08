@@ -1,7 +1,8 @@
 # PHRED Quality Visualizer
 
-A webapp for easy visualization of PHRED-format quality scores from FASTQ sequencing data.
-PHRED scores describe the error probability of an inaccurate DNA base read during sequencing.
+Quickly render quality score trends in NGS and Nanopore sequencing.
+This webapp normalizes variations of PHRED-format quality scores, which 
+describe the error probability of an inaccurate DNA base read during sequencing.
 
 ## Startup
 

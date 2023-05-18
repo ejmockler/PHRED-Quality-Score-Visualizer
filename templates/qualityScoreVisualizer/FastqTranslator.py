@@ -96,12 +96,13 @@ class FastQreader:
 
 def main ():
     """Excution of PHREDreader output which are lists of ASCII values which represent the actual quality scores of our raw sequences"""
-    myReader = FastQreader('7_1.fastq')
+    # myReader = FastQreader('7_1.fastq')
     # use '7_1.fastq' to test PHRED+33, use 'Galaxy.fastq' to test PHRED+64
+    myReader = FastQreader('example.fastq')
     for header,sequence,headerOpt,qualityScore in myReader.readFastq():
         #print (header + '\n'+ sequence + '\n'+ headerOpt + '\n'+ qualityScore)
         phredReader = PHREDreader(header,sequence,qualityScore)
-        print (phredReader.ASCIIconverter())
+        print (f"PHRED 33 scores: {phredReader.ASCIIconverter()}")
 
 if __name__ == "__main__":
     main()
